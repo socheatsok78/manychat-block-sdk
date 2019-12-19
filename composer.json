@@ -1,0 +1,20 @@
+{
+    "name": "socheatsok/manychat-block-sdk",
+    "description": "ManyChat Block SDK",
+    "type": "library",
+    "homepage": "https://github.com/socheatsok78/manychat-block-sdk/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Socheat Sok",
+            "email": "alex@socheat.net"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "ManyChat\\Dynamic\\": "src/"
+        }
+    }
+}
