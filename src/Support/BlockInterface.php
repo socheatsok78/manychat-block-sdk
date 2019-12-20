@@ -5,14 +5,14 @@ namespace ManyChat\Dynamic\Support;
 interface BlockInterface
 {
     /**
-     * Get the Attachment type
+     * Get the Block type
      *
      * @return string
      */
     public function type();
 
     /**
-     * Get the Attachment payload
+     * Get the Block payload
      *
      * @return boolean|array
      */
