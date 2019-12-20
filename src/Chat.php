@@ -92,7 +92,7 @@ class Chat implements Jsonable, JsonSerializable, WebDriver
      */
     protected function getActionsResponse()
     {
-        return $this->evaluateChatResponse($this->actions);
+        return $this->actions;
     }
 
     /**
