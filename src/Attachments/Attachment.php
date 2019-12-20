@@ -2,74 +2,27 @@
 
 namespace ManyChat\Dynamic\Attachments;
 
-use ManyChat\Dynamic\Support\WebDriver;
+use ManyChat\Dynamic\Foundation\Block;
 
-abstract class Attachment implements WebDriver
+abstract class Attachment extends Block
 {
     /**
-     * The attachment type
+     * Check if a Block can have buttons element
      *
-     * @var string
+     * @return boolean
      */
-    protected $type;
-
-    /**
-     * The attachment payload
-     *
-     * @var mixed
-     */
-    protected $payload;
-
-    /**
-     * Attachment constructor
-     * @param mixed $payload
-     */
-    public function __construct($payload = null)
+    public function hasButtonAttribute()
     {
-        $this->payload = $payload;
+        return true;
     }
 
     /**
-     * Get the Attachment type
+     * Check if a Block can have actions element
      *
-     * @return string
+     * @return boolean
      */
-    protected function type()
+    public function hasActionAttribute()
     {
-        return $this->type;
-    }
-
-    /**
-     * Get the Attachment payload
-     *
-     * @return array
-     */
-    protected function payload()
-    {
-        return $this->payload;
-    }
-
-    /**
-     * Get the Attachement elements
-     *
-     * @return array
-     */
-    abstract protected function elements();
-
-    /**
-     * Get the instance as a web accessible array.
-     * This will be used within the WebDriver.
-     *
-     * @return array
-     */
-    public function toWebDriver()
-    {
-        $data = array_merge(['type' => $this->type()], $this->elements());
-
-        if ($this->payload) {
-            $data = array_merge($data, $this->payload());
-        }
-
-        return $data;
+        return false;
     }
 }
