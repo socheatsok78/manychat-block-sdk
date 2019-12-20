@@ -3,9 +3,10 @@
 namespace ManyChat\Dynamic;
 
 use ManyChat\Dynamic\Support\Jsonable;
+use ManyChat\Dynamic\Support\WebDriver;
 use JsonSerializable;
 
-class Chat implements Jsonable, JsonSerializable
+class Chat implements Jsonable, JsonSerializable, WebDriver
 {
     use Concerns\HasChatResponse;
 
