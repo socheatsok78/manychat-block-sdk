@@ -62,6 +62,19 @@ class Chat implements Jsonable, JsonSerializable, WebDriver
     }
 
     /**
+     * Add an action to action response
+     *
+     * @param array $action
+     * @return Chat
+     */
+    protected function addAction($action)
+    {
+        array_push($this->actions, $action);
+
+        return $this;
+    }
+
+    /**
      * Get the messages response
      *
      * @return array
