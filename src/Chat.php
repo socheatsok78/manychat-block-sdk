@@ -6,7 +6,7 @@ use ManyChat\Dynamic\Support\Jsonable;
 use ManyChat\Dynamic\Support\WebDriver;
 use JsonSerializable;
 
-class Chat implements Jsonable, JsonSerializable, WebDriver
+class Chat implements Jsonable, WebDriver, JsonSerializable
 {
     use Concerns\HasResponse,
         Concerns\HasSubscriber;
