@@ -4,7 +4,7 @@ namespace ManyChat\Dynamic\Messages;
 
 use ManyChat\Dynamic\Foundation\ListBlock;
 
-class ListLarge extends ListBlock
+class LargeList extends ListBlock
 {
     /**
      * The List style
