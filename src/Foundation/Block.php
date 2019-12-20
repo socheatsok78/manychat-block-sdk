@@ -5,8 +5,9 @@ namespace ManyChat\Dynamic\Foundation;
 use ManyChat\Dynamic\Concerns\HasResponse;
 use ManyChat\Dynamic\Support\WebDriver;
 use ManyChat\Dynamic\Support\BlockInterface;
+use JsonSerializable;
 
-abstract class Block implements BlockInterface, WebDriver
+abstract class Block implements BlockInterface, WebDriver, JsonSerializable
 {
     use HasResponse;
 
@@ -99,5 +100,25 @@ abstract class Block implements BlockInterface, WebDriver
         }
 
         return $data;
+    }
+
+    /**
+     * Convert the object into something JSON serializable.
+     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
+
+    /**
+     * Convert the model instance to an array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->toWebDriver();
     }
 }
