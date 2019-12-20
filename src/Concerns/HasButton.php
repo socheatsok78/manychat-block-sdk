@@ -27,7 +27,7 @@ trait HasButton
      * @param mixed $button
      * @return self
      */
-    public function withButton($button)
+    public function addButton($button)
     {
         array_push($this->buttons, $button);
 
@@ -40,10 +40,10 @@ trait HasButton
      * @param array $buttons
      * @return self
      */
-    public function withButtons($buttons)
+    public function addButtons($buttons)
     {
         foreach ($buttons as $button) {
-            $this->withButton($button);
+            $this->addButton($button);
         }
     }
 }
