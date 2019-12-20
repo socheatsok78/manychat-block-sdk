@@ -2,13 +2,13 @@
 
 namespace ManyChat\Dynamic\Foundation;
 
-use ManyChat\Dynamic\Concerns\HasChatResponse;
+use ManyChat\Dynamic\Concerns\HasResponse;
 use ManyChat\Dynamic\Support\WebDriver;
 use ManyChat\Dynamic\Support\BlockInterface;
 
 abstract class Block implements BlockInterface, WebDriver
 {
-    use HasChatResponse;
+    use HasResponse;
 
     /**
      * The Block type

@@ -2,7 +2,7 @@
 
 namespace ManyChat\Dynamic\Concerns;
 
-trait HasChatResponse
+trait HasResponse
 {
     /**
      * Evaluate chat response
