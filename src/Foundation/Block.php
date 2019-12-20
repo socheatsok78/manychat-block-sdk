@@ -11,21 +11,21 @@ abstract class Block implements BlockInterface, WebDriver
     use HasChatResponse;
 
     /**
-     * The attachment type
+     * The Block type
      *
      * @var string
      */
     protected $type;
 
     /**
-     * The attachment payload
+     * The Block payload
      *
      * @var mixed
      */
     protected $payload;
 
     /**
-     * Attachment constructor
+     * Block constructor
      * @param mixed $payload
      */
     public function __construct($payload = null)
@@ -34,7 +34,7 @@ abstract class Block implements BlockInterface, WebDriver
     }
 
     /**
-     * Get the Attachment type
+     * Get the Block type
      *
      * @return string
      */
@@ -44,17 +44,27 @@ abstract class Block implements BlockInterface, WebDriver
     }
 
     /**
-     * Get the Attachment payload
+     * Get the Block payload
      *
      * @return boolean|array
      */
     public function payload()
     {
+        if ($this->hasButtonAttribute()) {
+            // TODO: implement buttons response
+            $this->payload['buttons'] = [];
+        }
+
+        if ($this->hasActionAttribute()) {
+            // TODO: implement actions response
+            $this->payload['actions'] = [];
+        }
+
         return $this->payload;
     }
 
     /**
-     * Get the Attachement elements
+     * Get the Block elements
      *
      * @return array
      */
