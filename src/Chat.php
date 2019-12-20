@@ -8,7 +8,8 @@ use JsonSerializable;
 
 class Chat implements Jsonable, JsonSerializable, WebDriver
 {
-    use Concerns\HasChatResponse;
+    use Concerns\HasChatResponse,
+        Concerns\HasSubscriber;
 
     /**
      * The ManyChat response version.
