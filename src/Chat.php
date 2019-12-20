@@ -80,9 +80,9 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
      *
      * @return array
      */
-    protected function getMessagesResponse()
+    protected function messages()
     {
-        return $this->evaluateChatResponse($this->messages);
+        return $this->messages;
     }
 
     /**
@@ -90,7 +90,7 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
      *
      * @return array
      */
-    protected function getActionsResponse()
+    protected function actions()
     {
         return $this->actions;
     }
@@ -100,9 +100,9 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
      *
      * @return array
      */
-    protected function getQuickRepliesResponse()
+    protected function quickReplies()
     {
-        return $this->evaluateChatResponse($this->quickReplies);
+        return $this->quickReplies;
     }
 
     /**
@@ -115,9 +115,9 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
         $version = $this->version();
 
         $content = [
-            "messages" => $this->getMessagesResponse(),
-            "actions" => $this->getActionsResponse(),
-            "quick_replies" => $this->getQuickRepliesResponse()
+            "messages" => $this->messages(),
+            "actions" => $this->actions(),
+            "quick_replies" => $this->quickReplies()
         ];
 
         return [
