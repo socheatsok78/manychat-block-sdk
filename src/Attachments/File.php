@@ -14,7 +14,7 @@ class File extends Attachment
     protected $type = "file";
 
     /**
-     * The file url
+     * The File url
      *
      * @var string
      */
@@ -46,7 +46,7 @@ class File extends Attachment
     /**
      * Get the File url
      *
-     * @return void
+     * @return string
      */
     public function getUrl()
     {
