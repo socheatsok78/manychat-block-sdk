@@ -4,7 +4,7 @@ namespace ManyChat\Dynamic\Messages;
 
 use ManyChat\Dynamic\Foundation\CardBlock;
 
-class CardHorizontal extends CardBlock
+class HorizontalCard extends CardBlock
 {
     /**
      * The List style
