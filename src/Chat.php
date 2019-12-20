@@ -9,7 +9,7 @@ use JsonSerializable;
 class Chat implements Jsonable, WebDriver, JsonSerializable
 {
     use Concerns\HasResponse,
-        Concerns\HasSubscriber;
+        Concerns\HasAction;
 
     /**
      * The ManyChat response version.
@@ -63,19 +63,6 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
     }
 
     /**
-     * Add an action to action response
-     *
-     * @param array $action
-     * @return Chat
-     */
-    protected function addAction($action)
-    {
-        array_push($this->actions, $action);
-
-        return $this;
-    }
-
-    /**
      * Get the messages response
      *
      * @return array
@@ -83,16 +70,6 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
     protected function messages()
     {
         return $this->messages;
-    }
-
-    /**
-     * Get the actions response
-     *
-     * @return array
-     */
-    protected function actions()
-    {
-        return $this->actions;
     }
 
     /**

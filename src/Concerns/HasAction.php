@@ -2,8 +2,31 @@
 
 namespace ManyChat\Dynamic\Concerns;
 
-trait HasSubscriber
+trait HasAction
 {
+    /**
+     * Get the actions response
+     *
+     * @return array
+     */
+    public function actions()
+    {
+        return $this->actions;
+    }
+
+    /**
+     * Add an action to action response
+     *
+     * @param array $action
+     * @return Chat
+     */
+    protected function addAction($action)
+    {
+        array_push($this->actions, $action);
+
+        return $this;
+    }
+
     /**
      * Add a tag to subscriber
      *
