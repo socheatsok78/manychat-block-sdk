@@ -3,6 +3,8 @@
 namespace ManyChat\Dynamic\Foundation;
 
 use ManyChat\Dynamic\Concerns\HasResponse;
+use ManyChat\Dynamic\Concerns\HasButton;
+use ManyChat\Dynamic\Concerns\HasAction;
 use ManyChat\Dynamic\Support\Jsonable;
 use ManyChat\Dynamic\Support\WebDriver;
 use ManyChat\Dynamic\Support\BlockInterface;
@@ -10,7 +12,9 @@ use JsonSerializable;
 
 abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSerializable
 {
-    use HasResponse;
+    use HasResponse,
+        HasButton,
+        HasAction;
 
     /**
      * The Block type
@@ -25,6 +29,13 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
      * @var mixed
      */
     protected $payload;
+
+    /**
+     * The ManyChat actions
+     *
+     * @var array
+     */
+    protected $actions = [];
 
     /**
      * Block constructor
@@ -52,14 +63,12 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
      */
     public function payload()
     {
-        if ($this->hasButtonAttribute()) {
-            // TODO: implement buttons response
-            $this->payload['buttons'] = [];
+        if ($this->hasButtonAttribute() && !empty($this->buttons())) {
+            $this->payload['buttons'] = $this->buttons();
         }
 
-        if ($this->hasActionAttribute()) {
-            // TODO: implement actions response
-            $this->payload['actions'] = [];
+        if ($this->hasActionAttribute() && !empty($this->actions())) {
+            $this->payload['actions'] = $this->actions();
         }
 
         return $this->payload;
