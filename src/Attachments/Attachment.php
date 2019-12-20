@@ -2,7 +2,9 @@
 
 namespace ManyChat\Dynamic\Attachments;
 
-abstract class Attachment
+use ManyChat\Dynamic\Support\WebDriver;
+
+abstract class Attachment implements WebDriver
 {
     /**
      * The attachment type
