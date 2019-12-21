@@ -56,3 +56,101 @@ class WelcomeMessage extends Controller
 - [ManyChat Developer Tools](https://devtools.manychat.com/)
 - [ManyChat API](https://api.manychat.com)
 - [Response Reference](https://manychat.github.io/dynamic_block_docs/)
+
+# Contents
+- [Messages](#Messages)
+- [Attachments](#Attachments)
+- [Buttons](#Buttons)
+- [Actions](#Actions)
+- [Quick Reply](#Quick-Reply)
+
+## Messages
+Create a message block like Text, List or Card.
+
+### Text
+Create a `Text` message block for sending text messages.
+
+The `Url`, `Flow`, `Node` and `Call` buttons can be used with `Text` block.
+
+```php
+$text = new Text('Example text message');
+
+# or
+
+$text = Text::create('Example text message');
+```
+
+### List
+Create a list message block, a set of items vertically. There are two types of list `CompactList` and `LargeList`.
+
+- `CompactList`  renders each item identically and is useful for presenting a list of items where no item is shown prominently.
+
+- `LargeList` renders the first item with a cover image with text overlaid
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `List` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+# You need to create at lease 2 Element block
+$element_1 = new Element([/* ... */]);
+$element_2 = new Element([/* ... */]);
+
+$compactList = new CompactList([$element_1, $element_2]);
+$largeList = new LargeList([$element_1, $element_2]);
+```
+
+### Card
+Create a horizontal scrollable gallery. There are two types of card `SquareCard` and `HorizontalCard`.
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Card` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+# You need to create at lease 2 Element block
+$element_1 = new Element([/* ... */]);
+$element_2 = new Element([/* ... */]);
+
+$horizontalCard = new HorizontalCard([$element_1, $element_2]);
+$squareCard = new SquareCard([$element_1, $element_2]);
+```
+
+### Element
+Create a element block. It can only be used on `List` or `Card` block.
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+$element = new Element();
+$element->title = 'Unsplash';
+$element->subTitle = 'Photos for everyone';
+$element->imageUrl = 'https://source.unsplash.com/random';
+$element->actionUrl = 'https://unsplash.com';
+
+# or
+
+$element = new Element([
+    'title' => 'Unsplash',
+    'subTitle' => 'Photos for everyone',
+    'imageUrl' => 'https://source.unsplash.com/random',
+    'actionUrl' => 'https://unsplash.com',
+]);
+```
+
+## Attachments
+Coming soon...
+
+## Buttons
+Coming soon...
+
+## Actions
+Coming soon...
+
+## Quick Reply
+Coming soon...
+
+## License
+Licensed under the [MIT](LICENSE)
