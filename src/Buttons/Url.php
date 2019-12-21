@@ -55,7 +55,7 @@ class Url extends Button
      * @param string $url
      * @return Button
      */
-    public static function url(string $url)
+    public static function create(string $url)
     {
         return new self($url);
     }

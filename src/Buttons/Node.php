@@ -47,7 +47,7 @@ class Node extends Button
      * @param string $target
      * @return Button
      */
-    public static function target(string $target)
+    public static function create(string $target)
     {
         return new self($target);
     }
