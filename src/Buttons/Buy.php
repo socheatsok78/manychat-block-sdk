@@ -61,7 +61,7 @@ class Buy extends Button
      * @param string $product
      * @return Button
      */
-    public static function product(string $product)
+    public static function create(string $product)
     {
         return new self($product);
     }
