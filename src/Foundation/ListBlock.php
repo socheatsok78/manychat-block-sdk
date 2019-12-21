@@ -65,11 +65,11 @@ abstract class ListBlock extends Block
     }
 
     /**
-     * Get the Message elements
+     * Get the Block response format
      *
      * @return array
      */
-    protected function elements()
+    protected function toResponseFormat()
     {
         return [
             'top_element_style' => $this->style(),

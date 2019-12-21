@@ -75,11 +75,11 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
     }
 
     /**
-     * Get the Block elements
+     * Get the Block response format
      *
      * @return array
      */
-    abstract protected function elements();
+    abstract protected function toResponseFormat();
 
     /**
      * Check if a Block can have buttons element
@@ -103,7 +103,7 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
      */
     public function toWebDriver()
     {
-        $data = array_merge(['type' => $this->type()], $this->elements());
+        $data = array_merge(['type' => $this->type()], $this->toResponseFormat());
 
         if ($this->payload()) {
             $data = array_merge($data, $this->payload());

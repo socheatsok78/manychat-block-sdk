@@ -54,11 +54,11 @@ class File extends Attachment
     }
 
     /**
-     * Get the Attachement elements
+     * Get the Block response format
      *
      * @return array
      */
-    protected function elements()
+    protected function toResponseFormat()
     {
         return [
             'url' => $this->getUrl()

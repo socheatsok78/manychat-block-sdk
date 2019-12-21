@@ -55,11 +55,11 @@ class Text extends Message
     }
 
     /**
-     * Get the Message elements
+     * Get the Block response format
      *
      * @return array
      */
-    protected function elements()
+    protected function toResponseFormat()
     {
         return [
             'text' => $this->getText()

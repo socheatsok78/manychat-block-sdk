@@ -19,6 +19,13 @@ interface BlockInterface
     public function payload();
 
     /**
+     * Get the Block response format
+     *
+     * @return array
+     */
+    function toResponseFormat();
+
+    /**
      * Check if a Block can have buttons element
      *
      * @return boolean
