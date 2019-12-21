@@ -59,13 +59,8 @@ class Buy extends Button
     {
         parent::__construct($payload);
 
-        if (is_string($product)) {
-            $this->product['label'] = $product;
-        }
-
-        if (is_int($cost)) {
-            $this->product['cost'] = $cost;
-        }
+        $this->product['label'] = $product;
+        $this->product['cost'] = $cost;
 
         $this->caption = $caption;
     }
@@ -77,7 +72,7 @@ class Buy extends Button
      * @param int $cost
      * @return self
      */
-    public static function create($product, $cost = null)
+    public static function create($product, $cost)
     {
         return new self($product, $cost);
     }
