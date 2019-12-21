@@ -53,7 +53,7 @@ class Url extends Button
      * Create a new URL instance
      *
      * @param string $url
-     * @return Button
+     * @return self
      */
     public static function create(string $url)
     {

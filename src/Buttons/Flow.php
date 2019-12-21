@@ -45,7 +45,7 @@ class Flow extends Button
      * Create a new Flow instance
      *
      * @param string $target
-     * @return Button
+     * @return self
      */
     public static function create(string $target)
     {

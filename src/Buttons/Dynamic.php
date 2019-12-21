@@ -67,7 +67,7 @@ class Dynamic extends Button
      * Create a new Dynamic Block instance
      *
      * @param string $url
-     * @return Button
+     * @return self
      */
     public static function create(string $url)
     {

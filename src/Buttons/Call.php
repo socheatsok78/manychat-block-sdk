@@ -45,7 +45,7 @@ class Call extends Button
      * Create a new Call instance
      *
      * @param string $phoneNumber
-     * @return Button
+     * @return self
      */
     public static function phone(string $phoneNumber)
     {
