@@ -23,7 +23,7 @@ interface BlockInterface
      *
      * @return array
      */
-    function toResponseFormat();
+    public function toResponseFormat();
 
     /**
      * Check if a Block can have buttons element
