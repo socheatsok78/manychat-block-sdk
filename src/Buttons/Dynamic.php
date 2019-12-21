@@ -32,7 +32,7 @@ class Dynamic extends Button
      *
      * @var string
      */
-    protected $method;
+    protected $method = 'post';
 
     /**
      * The Dynamic Block HTTP request headers
@@ -54,13 +54,12 @@ class Dynamic extends Button
      * @param string $caption
      * @param mixed $payload
      */
-    public function __construct($url, $caption = "Dynamic content", $size = "full", $payload = null)
+    public function __construct($url, $caption = "Dynamic content", $payload = null)
     {
         parent::__construct($payload);
 
         $this->url = $url;
         $this->caption = $caption;
-        $this->method = $size;
     }
 
     /**
