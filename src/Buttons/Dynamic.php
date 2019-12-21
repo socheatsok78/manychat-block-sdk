@@ -1,0 +1,142 @@
+<?php
+
+namespace ManyChat\Dynamic\Buttons;
+
+use ManyChat\Dynamic\Buttons\Button;
+
+class Dynamic extends Button
+{
+    /**
+     * The Button type
+     *
+     * @var string
+     */
+    protected $type = 'dynamic_block_callback';
+
+    /**
+     * The Dynamic Block caption
+     *
+     * @var string
+     */
+    protected $caption;
+
+    /**
+     * The Dynamic Block url address
+     *
+     * @var string
+     */
+    protected $url;
+
+    /**
+     * The Dynamic Block HTTP request method
+     *
+     * @var string
+     */
+    protected $method;
+
+    /**
+     * The Dynamic Block HTTP request headers
+     *
+     * @var array
+     */
+    protected $headers;
+
+    /**
+     * The Dynamic Block HTTP request payload
+     *
+     * @var array
+     */
+    protected $payload;
+
+    /**
+     * Create a new Dynamic Block instance
+     * @param string $url
+     * @param string $caption
+     * @param mixed $payload
+     */
+    public function __construct($url, $caption = "Dynamic content", $size = "full", $payload = null)
+    {
+        parent::__construct($payload);
+
+        $this->url = $url;
+        $this->caption = $caption;
+        $this->method = $size;
+    }
+
+    /**
+     * Create a new Dynamic Block instance
+     *
+     * @param string $url
+     * @return Button
+     */
+    public static function url(string $url)
+    {
+        return new self($url);
+    }
+
+    /**
+     * Get the Dynamic Block address
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Get the Dynamic Block caption
+     *
+     * @return string
+     */
+    public function getCaption()
+    {
+        return $this->caption;
+    }
+
+    /**
+     * The Dynamic Block HTTP request method
+     *
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * The Dynamic Block HTTP request headers
+     *
+     * @return string
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    /**
+     * The Dynamic Block HTTP request payload
+     *
+     * @return string
+     */
+    public function getPayload()
+    {
+        return $this->payload;
+    }
+
+    /**
+     * Get the Block response format
+     *
+     * @return array
+     */
+    protected function toResponseFormat()
+    {
+        return [
+            'url' => $this->getUrl(),
+            'caption' => $this->getCaption(),
+            'method' => $this->getMethod(),
+            'headers' => $this->getHeaders(),
+            'payload' => $this->getPayload()
+        ];
+    }
+}
