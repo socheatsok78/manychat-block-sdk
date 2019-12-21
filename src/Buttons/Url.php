@@ -95,7 +95,7 @@ class Url extends Button
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'url' => $this->getUrl(),

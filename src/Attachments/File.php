@@ -58,7 +58,7 @@ class File extends Attachment
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'url' => $this->getUrl()

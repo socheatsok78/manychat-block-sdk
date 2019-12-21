@@ -77,7 +77,7 @@ class Node extends Button
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'target' => $this->getTarget(),

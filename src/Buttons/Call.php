@@ -77,7 +77,7 @@ class Call extends Button
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'phone' => $this->getPhone(),

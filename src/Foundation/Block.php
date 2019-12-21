@@ -79,7 +79,7 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
      *
      * @return array
      */
-    abstract protected function toResponseFormat();
+    abstract public function toResponseFormat();
 
     /**
      * Check if a Block can have buttons element

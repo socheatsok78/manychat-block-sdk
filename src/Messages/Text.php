@@ -59,7 +59,7 @@ class Text extends Message
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'text' => $this->getText()

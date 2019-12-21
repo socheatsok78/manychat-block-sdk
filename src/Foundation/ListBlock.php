@@ -69,7 +69,7 @@ abstract class ListBlock extends Block
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'top_element_style' => $this->style(),

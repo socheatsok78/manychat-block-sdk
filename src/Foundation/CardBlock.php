@@ -69,7 +69,7 @@ abstract class CardBlock extends Block
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'image_aspect_ratio' => $this->style(),

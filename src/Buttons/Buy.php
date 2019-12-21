@@ -153,7 +153,7 @@ class Buy extends Button
      *
      * @return array
      */
-    protected function toResponseFormat()
+    public function toResponseFormat()
     {
         return [
             'caption' => $this->getCaption(),
