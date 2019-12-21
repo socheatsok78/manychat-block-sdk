@@ -39,7 +39,7 @@ class Text extends Message
      * @param string $text
      * @return self
      */
-    public static function text(string $text)
+    public static function create(string $text)
     {
         return new self($text);
     }
