@@ -50,7 +50,7 @@ class Buy extends Button
      * @param string $caption
      * @param mixed $payload
      */
-    public function __construct($product = null, $cost = null, $caption = "Buy", $payload = null)
+    public function __construct($product = null, $cost = null, $caption = "Buy now", $payload = null)
     {
         parent::__construct($payload);
 
