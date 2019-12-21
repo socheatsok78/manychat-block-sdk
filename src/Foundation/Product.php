@@ -58,7 +58,7 @@ class Product implements Jsonable, WebDriver, JsonSerializable
     /**
      * Set the Product price
      *
-     * @param string $price
+     * @param int $price
      * @return self
      */
     public function setPrice($price)
