@@ -3,6 +3,8 @@
 namespace ManyChat\Dynamic\Buttons;
 
 use ManyChat\Dynamic\Buttons\Button;
+use ManyChat\Dynamic\Foundation\Customer;
+use ManyChat\Dynamic\Foundation\Product;
 
 class Buy extends Button
 {
@@ -23,23 +25,16 @@ class Buy extends Button
     /**
      * The Buy customer
      *
-     * @var array
+     * @var Customer
      */
-    protected $customer = [
-        "shipping_address" => false,
-        "contact_name" =>     false,
-        "contact_phone" =>    false
-    ];
+    protected $customer;
 
     /**
      * The Buy product
      *
-     * @var array
+     * @var Product
      */
-    protected $product = [
-        'label' => null,
-        'cost' => 0
-    ];
+    protected $product;
 
     /**
      * The Buy success target Node
@@ -55,14 +50,20 @@ class Buy extends Button
      * @param string $caption
      * @param mixed $payload
      */
-    public function __construct($product, $cost, $caption = "Buy", $payload = null)
+    public function __construct($product = null, $cost = null, $caption = "Buy", $payload = null)
     {
         parent::__construct($payload);
 
-        $this->product['label'] = $product;
-        $this->product['cost'] = $cost;
-
         $this->caption = $caption;
+
+        $this->customer = new Customer();
+        $this->product = new Product();
+
+        if ($product)
+            $this->product->setName($product);
+
+        if ($cost)
+            $this->product->setPrice($cost);
     }
 
     /**
@@ -126,47 +127,23 @@ class Buy extends Button
     public function withCustomer(callable $callback)
     {
         if (is_callable($callback)) {
-            $callback($this);
+            $callback($this->customer);
         }
 
         return $this;
     }
 
     /**
-     * Require Customer shipping address
+     * Execute a callback on Product data
      *
-     * @param boolean $status
+     * @param callable $callback
      * @return self
      */
-    protected function requestShippingAddress($status = true)
+    public function withProduct(callable $callback)
     {
-        $this->customer['shipping_address'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Require Customer contact name
-     *
-     * @param boolean $status
-     * @return self
-     */
-    protected function requestName($status = true)
-    {
-        $this->customer['contact_name'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Require Customer contact phone
-     *
-     * @param boolean $status
-     * @return self
-     */
-    protected function requestPhoneNumber($status = true)
-    {
-        $this->customer['contact_phone'] = $status;
+        if (is_callable($callback)) {
+            $callback($this->product);
+        }
 
         return $this;
     }
