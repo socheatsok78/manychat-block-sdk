@@ -78,6 +78,16 @@ class Element implements BlockInterface, Jsonable, WebDriver, JsonSerializable
     }
 
     /**
+     * Get the Block response format
+     *
+     * @return array
+     */
+    public function toResponseFormat()
+    {
+        return;
+    }
+
+    /**
      * Get the Block payload
      *
      * @return boolean|array
