@@ -61,14 +61,14 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
      *
      * @return boolean|array
      */
-    public function payload()
+    public function getPayload()
     {
         if ($this->hasButtonAttribute() && !empty($this->buttons())) {
             $this->payload['buttons'] = $this->buttons();
         }
 
-        if ($this->hasActionAttribute() && !empty($this->actions())) {
-            $this->payload['actions'] = $this->actions();
+        if ($this->hasActionAttribute() && !empty($this->getActions())) {
+            $this->payload['actions'] = $this->getActions();
         }
 
         return $this->payload;
@@ -105,8 +105,8 @@ abstract class Block implements BlockInterface, Jsonable, WebDriver, JsonSeriali
     {
         $data = array_merge(['type' => $this->type()], $this->toResponseFormat());
 
-        if ($this->payload()) {
-            $data = array_merge($data, $this->payload());
+        if ($this->getPayload()) {
+            $data = array_merge($data, $this->getPayload());
         }
 
         return $data;

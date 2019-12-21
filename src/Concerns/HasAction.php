@@ -9,7 +9,7 @@ trait HasAction
      *
      * @return array
      */
-    public function actions()
+    public function getActions()
     {
         return $this->actions;
     }

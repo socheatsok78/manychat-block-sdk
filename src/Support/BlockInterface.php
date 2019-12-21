@@ -16,7 +16,7 @@ interface BlockInterface
      *
      * @return boolean|array
      */
-    public function payload();
+    public function getPayload();
 
     /**
      * Get the Block response format

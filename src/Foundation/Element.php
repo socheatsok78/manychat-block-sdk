@@ -92,7 +92,7 @@ class Element implements BlockInterface, Jsonable, WebDriver, JsonSerializable
      *
      * @return boolean|array
      */
-    public function payload()
+    public function getPayload()
     {
         if ($this->hasButtonAttribute() && !empty($this->buttons())) {
             $this->payload['buttons'] = $this->buttons();
@@ -116,8 +116,8 @@ class Element implements BlockInterface, Jsonable, WebDriver, JsonSerializable
             'action_url' => $this->actionUrl
         ];
 
-        if ($this->payload()) {
-            $data = array_merge($data, $this->payload());
+        if ($this->getPayload()) {
+            $data = array_merge($data, $this->getPayload());
         }
 
         return $data;
