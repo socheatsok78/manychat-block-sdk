@@ -13,21 +13,21 @@ class Customer implements Jsonable, WebDriver, JsonSerializable
      *
      * @var boolean
      */
-    protected $name;
+    protected $name = false;
 
     /**
      * The Customer contact phone status
      *
      * @var boolean
      */
-    protected $phoneNumber;
+    protected $phoneNumber = false;
 
     /**
      * The Customer shipping address status
      *
      * @var boolean
      */
-    protected $shippingAddress;
+    protected $shippingAddress = false;
 
     /**
      * Require Customer shipping address
