@@ -202,7 +202,118 @@ $video = Video::url('/* URL to the video file */');
 ```
 
 ## Buttons
-Coming soon...
+Create a button block like `Call`, `Url`, `Buy`, `Node` and `Flow`.
+
+You can provide custom `Action` to be performed with the button. `Actions` can be attached to `Url`, `Flow` and `Node` button types.
+
+### Call
+Create a call button block.
+
+```php
+$call = new Call('+123456789');
+
+# or
+
+$call = Call::phone('+123456789');
+```
+
+### Url
+Create a url button block.
+
+```php
+$url = new Url('https://example.com');
+
+# or
+
+$url = Url::create('https://example.com');
+```
+
+`Url` has 3 style options:
+
+```php
+use ManyChat\Dynamic\Buttons\Url;
+
+$url = new Url('https://example.com');
+
+$url->full()     # 100 %
+    ->medium()   # 75 %
+    ->compact(); # 50 %
+```
+
+### Buy
+Create a buy button block.
+
+```php
+use ManyChat\Dynamic\Buttons\Buy;
+
+$buy = new Buy('T-Shirt', 2000);
+
+# or
+
+$buy = Buy::create('T-Shirt', 2000);
+```
+
+You can configure the `Buy` button payment option check the code below.
+
+```php
+use ManyChat\Dynamic\Foundation\Customer;
+use ManyChat\Dynamic\Foundation\Product;
+
+$buy = new Buy();
+
+# Update Product name and price
+$buy->withProduct(function (Product $product) {
+    $product->name = 'T-Shirt';
+    $product->price = 2000;
+});
+
+# Update Customer requirement
+$buy->withCustomer(function (Customer $customer) {
+    $customer->withContactName()    # Require contact name
+        ->withContactPhone()        # Require contact phone
+        ->withShippingAddress();    # Require shipping address
+
+    # or
+
+    $customer->withoutContactName()    # Not require contact name
+        ->withoutContactPhone()        # Not require contact phone
+        ->withoutShippingAddress();    # Not require shipping address
+});
+```
+
+### Node
+Create a node button block to link with existing flow.
+
+Node name can be found in its header, you need to use unique name for node connected with link. If there are multiple nodes with similar names inside of the same flow, transition behaviour would not meet expectations.
+
+```php
+$node = new Node('Welcome Message');
+
+# or
+
+$node = Node::create('Welcome Message');
+```
+
+### Flow
+
+Create a flow button block. `Flow` block are like `Node` block, but `Flow` uses `id` of a `Node` or `Flow`.
+
+The `id` can be found in the address bar when you're editing the node/flow.
+
+```php
+$flow = new Flow('content20180221085508_278589');
+
+# or
+
+$flow = Flow::create('content20180221085508_278589');
+```
+
+Example node/flow url:
+```
+# URL: https://manychat.com/fb152631685162536/cms/files/content20191211074127_716888
+
+The `content20191211074127_716888` is the `id` of the node/flow.
+```
 
 ## Actions
 Coming soon...
