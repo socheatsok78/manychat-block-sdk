@@ -119,7 +119,7 @@ $squareCard = new SquareCard([$element_1, $element_2]);
 ### Element
 Create a element block. It can only be used on `List` or `Card` block.
 
-The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` block.
 
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
@@ -159,7 +159,7 @@ $file = File::url('/* URL to the file */');
 ### Image
 Create an image block to send an image. `Image` supports JPG, PNG and GIF images.
 
-The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` block.
 
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
@@ -174,7 +174,7 @@ $image = Image::url('https://source.unsplash.com/random');
 ### Audio
 Create an audio block send audio files, which are no larger than 25 MB.
 
-The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` block.
 
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
@@ -189,7 +189,7 @@ $audio = Audio::url('/* URL to the audio file */');
 ### Video
 Create an video block send video files, which are no larger than 25 MB.
 
-The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` block.
 
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
