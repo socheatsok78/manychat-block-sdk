@@ -61,6 +61,42 @@ class Url extends Button
     }
 
     /**
+     * Set Url webview style to full
+     *
+     * @return self
+     */
+    public function full()
+    {
+        $this->size = 'full';
+
+        return $this;
+    }
+
+    /**
+     * Set Url webview style to medium
+     *
+     * @return self
+     */
+    public function medium()
+    {
+        $this->size = 'medium';
+
+        return $this;
+    }
+
+    /**
+     * Set Url webview style to compact
+     *
+     * @return self
+     */
+    public function compact()
+    {
+        $this->size = 'compact';
+
+        return $this;
+    }
+
+    /**
      * Get the URL address
      *
      * @return string
