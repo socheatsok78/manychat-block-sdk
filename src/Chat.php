@@ -4,6 +4,8 @@ namespace ManyChat\Dynamic;
 
 use ManyChat\Dynamic\Support\Jsonable;
 use ManyChat\Dynamic\Support\WebDriver;
+use ManyChat\Dynamic\Callback\ExternalCallback;
+use Exception;
 use JsonSerializable;
 
 class Chat implements Jsonable, WebDriver, JsonSerializable
@@ -38,6 +40,13 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
      * @var array
      */
     protected $quickReplies = [];
+
+    /**
+     * The ManyChat external callback
+     *
+     * @var ExternalCallback
+     */
+    protected $callback;
 
     /**
      * Get the chat response array
@@ -76,6 +85,23 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
     }
 
     /**
+     * Create a external callback to the message
+     *
+     * @param mixed $reply
+     * @return Chat
+     */
+    public function callback($callback)
+    {
+        if ($callback instanceof ExternalCallback) {
+            $this->callback = $callback;
+        } else {
+            throw new Exception('Callback must be an instance of ExternalCallback');
+        }
+
+        return $this;
+    }
+
+    /**
      * Get the messages response
      *
      * @return array
@@ -96,6 +122,16 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
     }
 
     /**
+     * Get the external callback response
+     *
+     * @return array
+     */
+    protected function getExternalCallback()
+    {
+        return $this->callback;
+    }
+
+    /**
      * Get the chat response object
      *
      * @return array
@@ -109,6 +145,10 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
             "actions" => $this->getActions(),
             "quick_replies" => $this->getQuickReplies()
         ];
+
+        if ($this->callback) {
+            $content['external_message_callback'] = $this->getExternalCallback();
+        }
 
         return [
             "version" => $version,
