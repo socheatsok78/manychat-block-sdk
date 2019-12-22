@@ -57,6 +57,23 @@ class WelcomeMessage extends Controller
 - [ManyChat API](https://api.manychat.com)
 - [Response Reference](https://manychat.github.io/dynamic_block_docs/)
 
+# Installation
+Require `socheatsok78/manychat-block-sdk` package to your project
+
+```bash
+composer require socheatsok78/manychat-block-sdk
+```
+
+or edit `composer.json`
+
+```json
+{
+    "require": {
+        "socheatsok78/manychat-block-sdk": "^1.0"
+    },
+}
+```
+
 # Contents
 - [Messages](#Messages)
 - [Attachments](#Attachments)
