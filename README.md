@@ -63,6 +63,7 @@ class WelcomeMessage extends Controller
 - [Buttons](#Buttons)
 - [Actions](#Actions)
 - [Quick Reply](#Quick-Reply)
+- [External Callback](#External-Callback)
 
 ## Messages
 Create a message block like Text, List or Card.
@@ -418,7 +419,20 @@ $chat->quickReply($flow);
 ```
 
 ## External Callback
-Coming soon...
+You can ask ManyChat to handle the next subscriber’s message on your side by using the `ExternalCallback` block.
+
+> Note: Only one callback can be attached to `Chat` object.
+
+```php
+use ManyChat\Dynamic\Chat;
+use ManyChat\Dynamic\Callback\ExternalCallback;
+
+$chat = new Chat();
+
+$external = new ExternalCallback('https://example.com/api/flow/2');
+
+$chat->callback($external);
+```
 
 ## License
 Licensed under the [MIT](LICENSE)
