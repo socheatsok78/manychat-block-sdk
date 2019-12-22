@@ -1,10 +1,10 @@
 <?php
 
-namespace ManyChat\Dynamic\Buttons;
+namespace ManyChat\Dynamic\Callback;
 
-use ManyChat\Dynamic\Buttons\Button;
+use ManyChat\Dynamic\Callback\Callback;
 
-class Dynamic extends Button
+class DynamicBlock extends Callback
 {
     /**
      * The Button type
