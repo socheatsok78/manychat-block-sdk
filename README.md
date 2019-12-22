@@ -80,6 +80,7 @@ or edit `composer.json`
 - [Buttons](#Buttons)
 - [Actions](#Actions)
 - [Quick Reply](#Quick-Reply)
+- [Dynamic Block](#Dynamic-Block)
 - [External Callback](#External-Callback)
 
 ## Messages
@@ -435,6 +436,29 @@ $chat->quickReply($node);
 $chat->quickReply($flow);
 ```
 
+## Dynamic Block
+Create a Dynamic Block callback.
+
+```php
+use ManyChat\Dynamic\Callback\DynamicBlock;
+
+$dynamic = new DynamicBlock('https://example.com/api');
+
+# Add HTTP request header
+$dynamic->setHeader('x-header', 'value');
+$dynamic->setHeaders([
+    'x-header-2' => 'value',
+    'x-header-2' => 'value'
+]);
+
+# Add HTTP request payload
+$dynamic->setPayload('key', 'value');
+$dynamic->setPayloads([
+    'key-1' => 'value',
+    'key-2' => 'value'
+]);
+```
+
 ## External Callback
 You can ask ManyChat to handle the next subscriber’s message on your side by using the `ExternalCallback` block.
 
@@ -447,6 +471,20 @@ use ManyChat\Dynamic\Callback\ExternalCallback;
 $chat = new Chat();
 
 $external = new ExternalCallback('https://example.com/api/flow/2');
+
+# Add HTTP request header
+$external->setHeader('x-header', 'value');
+$external->setHeaders([
+    'x-header-2' => 'value',
+    'x-header-2' => 'value'
+]);
+
+# Add HTTP request payload
+$external->setPayload('key', 'value');
+$external->setPayloads([
+    'key-1' => 'value',
+    'key-2' => 'value'
+]);
 
 $chat->callback($external);
 ```
