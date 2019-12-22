@@ -11,62 +11,16 @@ class Product implements Jsonable, WebDriver, JsonSerializable
     /**
      * The Product name
      *
-     * @var boolean
+     * @var string
      */
-    protected $name;
+    public $name;
 
     /**
      * The Product price
      *
      * @var int
      */
-    protected $price;
-
-    /**
-     * Get the Product name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the Product name
-     *
-     * @param string $name
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the Product price
-     *
-     * @return int
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Set the Product price
-     *
-     * @param int $price
-     * @return self
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
+    public $price;
 
     /**
      * Get the instance as a web accessible array.
