@@ -141,7 +141,65 @@ $element = new Element([
 ```
 
 ## Attachments
-Coming soon...
+Create a attachment block like File, Image, Audio and Video.
+
+### File
+Create a file block to send any other files, which are no larger than 25 MB.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+$file = new File('/* URL to the file */');
+
+# or
+
+$file = File::url('/* URL to the file */');
+```
+
+### Image
+Create an image block to send an image. `Image` supports JPG, PNG and GIF images.
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+$image = new Image('https://source.unsplash.com/random');
+
+# or
+
+$image = Image::url('https://source.unsplash.com/random');
+```
+
+### Audio
+Create an audio block send audio files, which are no larger than 25 MB.
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+$audio = new Audio('/* URL to the audio file */');
+
+# or
+
+$audio = Audio::url('/* URL to the audio file */');
+```
+
+### Video
+Create an video block send video files, which are no larger than 25 MB.
+
+The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Element` block.
+
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
+```php
+$video = new Video('/* URL to the video file */');
+
+# or
+
+$video = Video::url('/* URL to the video file */');
+```
 
 ## Buttons
 Coming soon...
