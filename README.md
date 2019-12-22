@@ -73,6 +73,8 @@ Create a `Text` message block for sending text messages.
 The `Url`, `Flow`, `Node` and `Call` buttons can be used with `Text` block.
 
 ```php
+use ManyChat\Dynamic\Messages\Text;
+
 $text = new Text('Example text message');
 
 # or
@@ -92,6 +94,10 @@ The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `List` bloc
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Messages\Element;
+use ManyChat\Dynamic\Messages\LargeList;
+use ManyChat\Dynamic\Messages\CompactList;
+
 # You need to create at lease 2 Element block
 $element_1 = new Element([/* ... */]);
 $element_2 = new Element([/* ... */]);
@@ -108,6 +114,10 @@ The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `Card` bloc
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Messages\Element;
+use ManyChat\Dynamic\Messages\SquareCard;
+use ManyChat\Dynamic\Messages\HorizontalCard;
+
 # You need to create at lease 2 Element block
 $element_1 = new Element([/* ... */]);
 $element_2 = new Element([/* ... */]);
@@ -124,6 +134,8 @@ The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` b
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Messages\Element;
+
 $element = new Element();
 $element->title = 'Unsplash';
 $element->subTitle = 'Photos for everyone';
@@ -149,6 +161,8 @@ Create a file block to send any other files, which are no larger than 25 MB.
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Attachments\File;
+
 $file = new File('/* URL to the file */');
 
 # or
@@ -164,6 +178,8 @@ The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` b
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Attachments\Image;
+
 $image = new Image('https://source.unsplash.com/random');
 
 # or
@@ -179,6 +195,8 @@ The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` b
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Attachments\Audio;
+
 $audio = new Audio('/* URL to the audio file */');
 
 # or
@@ -194,6 +212,8 @@ The `Call`, `Url`, `Buy`, `Node` and `Flow` buttons can be used with `Element` b
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
 ```php
+use ManyChat\Dynamic\Attachments\Video;
+
 $video = new Video('/* URL to the video file */');
 
 # or
@@ -210,6 +230,8 @@ You can provide custom `Action` to be performed with the button. `Actions` can b
 Create a call button block.
 
 ```php
+use ManyChat\Dynamic\Buttons\Call;
+
 $call = new Call('+123456789');
 
 # or
@@ -221,6 +243,8 @@ $call = Call::phone('+123456789');
 Create a url button block.
 
 ```php
+use ManyChat\Dynamic\Buttons\Url;
+
 $url = new Url('https://example.com');
 
 # or
@@ -256,6 +280,7 @@ $buy = Buy::create('T-Shirt', 2000);
 You can configure the `Buy` button payment option check the code below.
 
 ```php
+use ManyChat\Dynamic\Buttons\Buy;
 use ManyChat\Dynamic\Foundation\Customer;
 use ManyChat\Dynamic\Foundation\Product;
 
@@ -287,6 +312,8 @@ Create a node button block to link with existing flow.
 Node name can be found in its header, you need to use unique name for node connected with link. If there are multiple nodes with similar names inside of the same flow, transition behaviour would not meet expectations.
 
 ```php
+use ManyChat\Dynamic\Buttons\Node;
+
 $node = new Node('Welcome Message');
 
 # or
@@ -301,6 +328,8 @@ Create a flow button block. `Flow` block are like `Node` block, but `Flow` uses 
 The `id` can be found in the address bar when you're editing the node/flow.
 
 ```php
+use ManyChat\Dynamic\Buttons\Flow;
+
 $flow = new Flow('content20180221085508_278589');
 
 # or
