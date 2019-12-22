@@ -345,7 +345,58 @@ The `content20191211074127_716888` is the `id` of the node/flow.
 ```
 
 ## Actions
-Coming soon...
+You can attach actions to `Chat`, `Message`, `Attachment` or `Button` object.
+
+There are only 2 type of actions `Tag` and `Custom Field`.
+
+> Note: The `$object` can be `Chat`, `Message`, `Attachment` or `Button` object.
+
+### Add Tag
+Add a tag to a subscriber
+
+```php
+$object->addTag('tag_name');
+
+# or add multiple tags
+
+$object->addTags(['tag_1', 'tag_2']);
+```
+
+### Remove Tag
+Remove a tag from a subscriber
+
+```php
+$object->removeTag('tag_name');
+
+# or remove multiple tags
+
+$object->removeTags(['tag_1', 'tag_2']);
+```
+
+### Add Custom Field
+Add a custom field to a subscriber
+
+```php
+$object->addField('Example_Field_1', 'value');
+
+# or add multiple custom fields
+
+$object->addFields([
+    'Example_Field_1' => 'value',
+    'Example_Field_2' => 'value'
+]);
+```
+
+### Remove Custom Field
+Remove a custom field from a subscriber
+
+```php
+$object->removeField('Example_Field_1');
+
+# or add multiple custom fields
+
+$object->removeFields(['Example_Field_1', 'Example_Field_2']);
+```
 
 ## Quick Reply
 Coming soon...
