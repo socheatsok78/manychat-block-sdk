@@ -399,6 +399,25 @@ $object->removeFields(['Example_Field_1', 'Example_Field_2']);
 ```
 
 ## Quick Reply
+Create a quick reply block. Quick Reply can only be attached to `Chat` object.
+
+The `Node`, `Flow` buttons and `DynamicBlock` callback can be used with Quick Reply block.
+
+```php
+use ManyChat\Dynamic\Chat;
+use ManyChat\Dynamic\Buttons\Node;
+use ManyChat\Dynamic\Buttons\Flow;
+
+$chat = new Chat();
+
+$node = new Node('Welcome Message');
+$flow = new Flow('content20180221085508_278589');
+
+$chat->quickReply($node);
+$chat->quickReply($flow);
+```
+
+## External Callback
 Coming soon...
 
 ## License
