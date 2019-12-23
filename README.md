@@ -269,6 +269,8 @@ $call = Call::phone('+123456789');
 ### Url
 Create a url button block.
 
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
 ```php
 use ManyChat\Dynamic\Buttons\Url;
 
@@ -449,10 +451,15 @@ $chat->quickReply($dynamic);
 ## Dynamic Block
 Create a Dynamic Block callback.
 
+> Note: We strongly suggest to use HTTPS protocol for your URLs
+
 ```php
 use ManyChat\Dynamic\Callback\DynamicBlock;
 
 $dynamic = new DynamicBlock('https://example.com/api');
+
+# Set Block caption
+$dynamic->setCaption('Custom Caption');
 
 # Add HTTP request header
 $dynamic->setHeader('x-header', 'value');
