@@ -58,14 +58,6 @@ class WelcomeMessage extends Controller
 }
 ```
 
-## Additional Documents
-- [docs](docs/README.md)
-
-### ManyChat Docs
-- [ManyChat Developer Tools](https://devtools.manychat.com/)
-- [ManyChat API](https://api.manychat.com)
-- [Response Reference](https://manychat.github.io/dynamic_block_docs/)
-
 # Installation
 Require `socheatsok78/manychat-block-sdk` package to your project
 
@@ -91,6 +83,9 @@ or edit `composer.json`
 - [Quick Reply](#Quick-Reply)
 - [Dynamic Block](#Dynamic-Block)
 - [External Callback](#External-Callback)
+
+## Additional Documents
+- [docs](docs/README.md)
 
 ## Messages
 Create a message block like Text, List or Card.
