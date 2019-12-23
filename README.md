@@ -1,11 +1,12 @@
 <img alt="Dynamic Content Block" src="resources/dynamic-content-block.png" style="border-radius: 10px;">
 
-# ManyChat Block SDK
+# ManyChat Block SDK (:warning: Un-official)
 
 Send any message block, like text, gallery, list and others. Attach buttons with custom payloads to continue interaction.
 
 Trigger actions in ManyChat, like tagging a user, setting a Custom Field or notifying an admin.
 
+### :warning: This is an Un-official SDK, Use at your own risk!
 #### Example code:
 
 ```php
