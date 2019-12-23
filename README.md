@@ -52,7 +52,9 @@ class WelcomeMessage extends Controller
 }
 ```
 
+
 ### ManyChat Docs
+- [Additional Documents](docs/README.md)
 - [ManyChat Developer Tools](https://devtools.manychat.com/)
 - [ManyChat API](https://api.manychat.com)
 - [Response Reference](https://manychat.github.io/dynamic_block_docs/)
