@@ -1,12 +1,12 @@
 <img alt="Dynamic Content Block" src="resources/dynamic-content-block.png" style="border-radius: 10px;">
 
-# ManyChat Block SDK (:warning: Un-official)
+# ManyChat Block SDK (:warning: Unofficial)
 
 Send any message block, like text, gallery, list and others. Attach buttons with custom payloads to continue interaction.
 
 Trigger actions in ManyChat, like tagging a user, setting a Custom Field or notifying an admin.
 
-### :warning: This is an Un-official SDK, Use at your own risk!
+### :warning: This is an Unofficial SDK, Use at your own risk!
 
 [![packagist](https://img.shields.io/packagist/v/socheatsok78/manychat-block-sdk)][packagist]
 [![packagist](https://img.shields.io/packagist/dm/socheatsok78/manychat-block-sdk)][packagist]
