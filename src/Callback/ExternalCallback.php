@@ -61,12 +61,11 @@ class ExternalCallback extends Callback
      * @param string $caption
      * @param mixed $payload
      */
-    public function __construct($url, $caption = "Dynamic content", $payload = null)
+    public function __construct($url, $payload = null)
     {
         parent::__construct($payload);
 
         $this->url = $url;
-        $this->caption = $caption;
     }
 
     /**
@@ -88,16 +87,6 @@ class ExternalCallback extends Callback
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Get the External Callback caption
-     *
-     * @return string
-     */
-    public function getCaption()
-    {
-        return $this->caption;
     }
 
     /**
@@ -149,7 +138,6 @@ class ExternalCallback extends Callback
     {
         return [
             'url' => $this->getUrl(),
-            'caption' => $this->getCaption(),
             'method' => $this->getMethod(),
             'headers' => $this->getHeaders(),
             'payload' => $this->getPayload(),
