@@ -439,9 +439,11 @@ $chat = new Chat();
 
 $node = new Node('Welcome Message');
 $flow = new Flow('content20180221085508_278589');
+$dynamic = new DynamicBlock('https://example.com/api');
 
 $chat->quickReply($node);
 $chat->quickReply($flow);
+$chat->quickReply($dynamic);
 ```
 
 ## Dynamic Block
