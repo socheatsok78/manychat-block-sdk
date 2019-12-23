@@ -124,6 +124,19 @@ class DynamicBlock extends Callback
     }
 
     /**
+     * Set Dynamic Block caption
+     *
+     * @param string $caption
+     * @return self
+     */
+    public function setCaption($caption)
+    {
+        $this->caption = $caption;
+
+        return $this;
+    }
+
+    /**
      * Get the Block response format
      *
      * @return array
