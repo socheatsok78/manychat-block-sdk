@@ -84,7 +84,7 @@ or edit `composer.json`
 - [Dynamic Block](#Dynamic-Block)
 - [External Callback](#External-Callback)
 
-## Additional Documents
+### Additional Documents
 - [docs](docs/README.md)
 
 ## Messages
