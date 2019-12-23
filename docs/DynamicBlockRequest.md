@@ -18,9 +18,12 @@ Example request payload:
 ```
 
 ### Full Subscriber Data
+Using the follwing `keyword` will provide you the [Full Subscriber Data](FullSubscriberData.md).
 ```js
 {{subscriber_data|fallback:""|to_json:true}}
 ```
+
+Check [Full Subscriber Data](FullSubscriberData.md) example for more information.
 
 #### User
 - User ID: `{{user_id|fallback:""|to_json:true}}`
