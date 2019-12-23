@@ -284,7 +284,7 @@ use ManyChat\Dynamic\Buttons\Url;
 
 $url = new Url('https://example.com');
 
-$url->full()     # 100 %
+$url->full()     # 100 %, Default
     ->medium()   # 75 %
     ->compact(); # 50 %
 ```
