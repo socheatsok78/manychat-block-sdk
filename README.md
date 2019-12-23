@@ -7,6 +7,11 @@ Send any message block, like text, gallery, list and others. Attach buttons with
 Trigger actions in ManyChat, like tagging a user, setting a Custom Field or notifying an admin.
 
 ### :warning: This is an Un-official SDK, Use at your own risk!
+
+[![packagist](https://img.shields.io/packagist/v/socheatsok78/manychat-block-sdk)][packagist]
+[![packagist](https://img.shields.io/packagist/dm/socheatsok78/manychat-block-sdk)][packagist]
+[![license](https://img.shields.io/github/license/socheatsok78/manychat-block-sdk)](LICENSE)
+
 #### Example code:
 
 ```php
@@ -494,3 +499,5 @@ $chat->callback($external);
 
 ## License
 Licensed under the [MIT](LICENSE)
+
+[packagist]: https://packagist.org/packages/socheatsok78/manychat-block-sdk
