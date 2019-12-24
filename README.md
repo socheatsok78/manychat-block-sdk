@@ -116,6 +116,8 @@ The `Url`, `Flow`, `Node`, `Call` and `Buy` buttons can be used with `List` bloc
 
 > Note: We strongly suggest to use HTTPS protocol for your URLs
 
+> Warning: :warning: Vertical List will be deprecated by Facebook and will be rendered as a `Card`
+
 ```php
 use ManyChat\Dynamic\Messages\Element;
 use ManyChat\Dynamic\Messages\LargeList;
