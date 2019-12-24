@@ -1,4 +1,4 @@
-# Dynamic Block Request
+# [←](README.md) Dynamic Block Request
 In dynamic block request body, you can use Full Subscriber Data variable, that contains all subscriber’s information:
 
 Example request payload:
