@@ -1,6 +1,12 @@
 # Full Subscriber Data
 `Full Subscriber Data` variable contains the following informations:
 
+Using the follwing `keyword` will provide you the `Full Subscriber Data`.
+```js
+{{subscriber_data|fallback:""|to_json:true}}
+```
+
+Example subscriber data response:
 ```json
 {
     "key": "user:1234567891234567",
