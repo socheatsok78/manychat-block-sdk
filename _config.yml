@@ -1,1 +1,6 @@
+title: ManyChat Block SDK (Unofficial)
+logo: /resources/logo.png
+description: Send any message block, like text, gallery, list and others. Attach buttons with custom payloads to continue interaction.
+show_downloads: true
+google_analytics:
 theme: jekyll-theme-minimal
