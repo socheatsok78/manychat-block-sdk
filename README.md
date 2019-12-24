@@ -504,7 +504,12 @@ $external->setPayloads([
 $chat->callback($external);
 ```
 
-## License
-Licensed under the [MIT](LICENSE)
+## Trademark
+Logos, service marks and trade names are trademark of [ManyChat, Inc](https://manychat.com/).
+- [Term of Service](https://manychat.com/tos.html)
+- [Privacy Policy](https://manychat.com/privacy.html)
+
+### License
+This package is an **Unofficial SDK** licensed under the [MIT](LICENSE)
 
 [packagist]: https://packagist.org/packages/socheatsok78/manychat-block-sdk
