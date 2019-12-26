@@ -152,7 +152,7 @@ class Subscriber implements Authenticatable
      */
     public function field($key)
     {
-        if (in_array($key, $this->customFields)) {
+        if (array_key_exists($key, $this->customFields)) {
             return $this->customFields[$key];
         }
     }
