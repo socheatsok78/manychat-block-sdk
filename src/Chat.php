@@ -21,6 +21,13 @@ class Chat implements Jsonable, WebDriver, JsonSerializable
     const VERSION = 'v2';
 
     /**
+     * The ManyChat HTTP User-Agent
+     *
+     * @var string
+     */
+    const UserAgent = 'ManyChat';
+
+    /**
      * The ManyChat messages
      *
      * @var array
