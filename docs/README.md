@@ -8,6 +8,9 @@
   - [Chat](DynamicBlockRequest.md#Chat)
   - [Opt-In](DynamicBlockRequest.md#Opt-In)
 
+## Using Laravel
+- [More information](Laravel.md)
+
 ## Facebook Messenger Platform
 - [Message Tags](MessageTags.md)
 
