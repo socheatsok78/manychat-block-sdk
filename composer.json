@@ -33,5 +33,5 @@
                 "ManyChat\\Laravel\\ManyChatServiceProvider"
             ]
         }
-    },
+    }
 }
