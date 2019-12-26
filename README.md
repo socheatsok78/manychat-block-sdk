@@ -87,7 +87,7 @@ or edit `composer.json`
 ### Additional Documents
 - [docs](docs/README.md)
 
-### Limitations
+### :rotating_light: Limitations
 Dynamic block has a limit to have not more than 10 messages in messages block, 11 quick replies and 5 actions.
 
 - Messages: 10
