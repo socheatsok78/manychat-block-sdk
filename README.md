@@ -90,10 +90,12 @@ or edit `composer.json`
 ### :rotating_light: Limitations
 Dynamic block has a limit to have not more than 10 messages in messages block, 11 quick replies and 5 actions.
 
-- Messages: 10
-- Actions: 5
-- Quick Replies: 11
-- Buttons: 3
+| Type          | Limit |
+| ------------- | ----- |
+| Messages      | 10    |
+| Actions       | 5     |
+| Quick Replies | 11    |
+| Buttons       | 3     |
 
 ## Messages
 Create a message block like Text, List or Card.
