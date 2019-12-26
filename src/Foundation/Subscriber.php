@@ -2,6 +2,7 @@
 
 namespace ManyChat\Dynamic\Foundation;
 
+use Exception;
 use ManyChat\Dynamic\Support\Authenticatable;
 
 class Subscriber implements Authenticatable
@@ -121,11 +122,26 @@ class Subscriber implements Authenticatable
      */
     public function __construct($subscriber)
     {
+        if (!in_array('live_chat_url', $subscriber) && !in_array('last_input_text', $subscriber)) {
+            throw new Exception('Invalid Subscriber Data');
+        }
+
         if (is_array($subscriber)) {
             $this->mapSubscriberData($subscriber);
         } else if (is_string($subscriber)) {
             $this->parseSubscriberJson($subscriber);
         }
+    }
+
+    /**
+     * Create a new Subscriber instance
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     */
+    static function create($payload)
+    {
+        return new self($payload);
     }
 
     /**
