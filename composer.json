@@ -1,8 +1,8 @@
 {
     "name": "socheatsok78/manychat-block-sdk",
-    "description": "ManyChat Block SDK",
+    "description": "ManyChat Block SDK (Unofficial)",
     "type": "library",
-    "homepage": "https://github.com/socheatsok78/manychat-block-sdk/",
+    "homepage": "https://socheatsok78.github.io/manychat-block-sdk",
     "license": "MIT",
     "keywords": [
         "library",
