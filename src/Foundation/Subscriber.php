@@ -2,7 +2,9 @@
 
 namespace ManyChat\Dynamic\Foundation;
 
-class Subscriber
+use ManyChat\Dynamic\Support\Authenticatable;
+
+class Subscriber implements Authenticatable
 {
     /** @var int */
     public $id;
@@ -124,6 +126,50 @@ class Subscriber
         } else if (is_string($subscriber)) {
             $this->parseSubscriberJson($subscriber);
         }
+    }
+
+    /**
+     * Get a custom fields key's value
+     *
+     * @param string $key
+     * @return string|null
+     */
+    public function field($key)
+    {
+        if (in_array($key, $this->customFields)) {
+            return $this->customFields[$key];
+        }
+    }
+
+    /**
+     * Get a custom fields key's value
+     *
+     * @param string $key
+     * @return string|null
+     */
+    public function customField($key)
+    {
+        return $this->field($key);
+    }
+
+    /**
+     * Get the name of the unique identifier for the user.
+     *
+     * @return string
+     */
+    public function getAuthIdentifierName()
+    {
+        return 'id';
+    }
+
+    /**
+     * Get the unique identifier for the user.
+     *
+     * @return mixed
+     */
+    public function getAuthIdentifier()
+    {
+        return $this->{$this->getAuthIdentifierName()};
     }
 
     /**
