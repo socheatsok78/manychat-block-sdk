@@ -4,6 +4,13 @@
     "type": "library",
     "homepage": "https://github.com/socheatsok78/manychat-block-sdk/",
     "license": "MIT",
+    "keywords": [
+        "library",
+        "manychat",
+        "manychat-sdk",
+        "dynamic-content-block",
+        "facebook-messenger-platform"
+    ],
     "authors": [
         {
             "name": "Socheat Sok",
