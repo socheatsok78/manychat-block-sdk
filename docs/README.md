@@ -8,6 +8,9 @@
   - [Chat](DynamicBlockRequest.md#Chat)
   - [Opt-In](DynamicBlockRequest.md#Opt-In)
 
+## Facebook Messenger Platform
+- [Message Tags](MessageTags.md)
+
 ## ManyChat Docs
 - [ManyChat Developer Tools](https://devtools.manychat.com/)
 - [ManyChat API](https://api.manychat.com)
