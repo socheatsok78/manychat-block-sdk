@@ -1,8 +1,8 @@
 # [←](/README.md) Additional Documents
 
 ### Dynamic Block
+- [Full Subscriber Data](FullSubscriberData.md)
 - [Dynamic Block Request](DynamicBlockRequest.md)
-  - [Full Subscriber Data](FullSubscriberData.md)
   - [User](DynamicBlockRequest.md#User)
   - [Page](DynamicBlockRequest.md#Page)
   - [Chat](DynamicBlockRequest.md#Chat)
