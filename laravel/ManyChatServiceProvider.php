@@ -2,6 +2,7 @@
 
 namespace ManyChat\Laravel;
 
+use ManyChat\Dynamic\Chat;
 use ManyChat\Dynamic\Subscriber;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,7 +38,7 @@ class ManyChatServiceProvider extends ServiceProvider
         $this->app->rebinding('request', function ($app, $request) {
             $userAgent = $request->header('User-Agent');
 
-            if ($userAgent == 'ManyChat') {
+            if (Chat::UserAgent == $userAgent) {
                 $request->setUserResolver(function ($guard = null) use ($app, $request) {
                     return call_user_func($this->getSubscriberResolver($request), $guard);
                 });
