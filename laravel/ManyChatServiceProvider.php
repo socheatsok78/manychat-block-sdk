@@ -38,7 +38,7 @@ class ManyChatServiceProvider extends ServiceProvider
         $this->app->rebinding('request', function ($app, $request) {
             $userAgent = $request->header('User-Agent');
 
-            if (Chat::UserAgent == $userAgent) {
+            if (Chat::HEADER_USER_AGENT == $userAgent) {
                 $request->setUserResolver(function ($guard = null) use ($app, $request) {
                     return call_user_func($this->getSubscriberResolver($request), $guard);
                 });
