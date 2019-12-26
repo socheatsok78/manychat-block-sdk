@@ -8,7 +8,11 @@ Businesses are encouraged to respond within 24 hours to user’s messages and Me
 
 Message tags may not be used to send promotional content, including but not limited to deals, offers, coupons, and discounts. Use of tags outside of the approved use cases below may result in restrictions on the Page's ability to send messages. See the Messenger Platform policy for details.
 
-### Tags
+### Further reading
+- [Message Tags on Facebook](https://developers.facebook.com/docs/messenger-platform/send-messages/message-tags#new_supported_tags)
+- [Content types (aka Facebook Message Tags)](https://support.manychat.com/support/solutions/articles/36000195552-message-tags)
+
+## Tags
 - [CONFIRMED_EVENT_UPDATE](#CONFIRMED_EVENT_UPDATE)
 - [POST_PURCHASE_UPDATE](#POST_PURCHASE_UPDATE)
 - [ACCOUNT_UPDATE](#ACCOUNT_UPDATE)
