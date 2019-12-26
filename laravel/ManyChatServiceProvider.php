@@ -53,15 +53,19 @@ class ManyChatServiceProvider extends ServiceProvider
     protected function getSubscriberResolver($request)
     {
         return function ()  use ($request) {
-            $subscriberHeader = $request->header('ManyChat-Subscriber-Key', '*');
+            $header = $request->header('ManyChat-Subscriber-Key', '*');
+            $payload = $request->all();
 
-            // If ManyChat-Subscriber-Key is set to *
-            // use all request payload as Subscriber
-            if ($subscriberHeader === '*') {
-                return new Subscriber($request->all());
+            if ($header == '*') {
+                $payload = $request->input($header);
             }
 
-            return new Subscriber($request->input($subscriberHeader));
+            // Check if $payload is ManyChat Subscriber data
+            if (in_array('live_chat_url', $payload) && in_array('last_input_text', $payload)) {
+                return new Subscriber($payload);
+            }
+
+            return;
         };
     }
 }
