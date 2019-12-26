@@ -6,8 +6,6 @@ use ManyChat\Dynamic\Foundation\Subscriber as BaseSubscriber;
 
 class Subscriber extends BaseSubscriber
 {
-
-
     /**
      * Create a new Subscriber instance
      *
