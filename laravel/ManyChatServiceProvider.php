@@ -57,7 +57,7 @@ class ManyChatServiceProvider extends ServiceProvider
             $header = $request->header('ManyChat-Subscriber-Key', '*');
             $payload = $request->all();
 
-            if ($header == '*') {
+            if ($header !== '*') {
                 $payload = $request->input($header);
             }
 
