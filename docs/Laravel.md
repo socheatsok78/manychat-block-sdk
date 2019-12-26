@@ -38,3 +38,29 @@ Example `DynamicBlock` request body:
 ```
 
 Then set the `ManyChat-Subscriber-Key` request header value to `my_subscriber`.
+
+## Middleware
+ManyChat Block SDK has multiple type of middleware that you can use.
+
+To limit routes to only `ManyChat` please use the `ManyChatAgent` middleware.
+
+> You need to add the `ManyChatAgent` middleware to the `$routeMiddleware` property of your `app/Http/Kernel.php` file:
+
+```php
+use \ManyChat\Laravel\Middleware\ManyChatAgent;
+
+protected $routeMiddleware = [
+    'manychat' => ManyChatAgent::class,
+];
+```
+
+You may also change the active language at runtime using the `ManyChatLocale` middleware.
+
+> You need to add the `ManyChatLocale` middleware to the `$middleware` property of your `app/Http/Kernel.php` file:
+```php
+use \ManyChat\Laravel\Middleware\ManyChatLocale;
+
+protected $middleware = [
+    ManyChatLocale::class,
+];
+```
