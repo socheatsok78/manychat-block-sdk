@@ -23,7 +23,15 @@
     },
     "autoload": {
         "psr-4": {
-            "ManyChat\\Dynamic\\": "src/"
+            "ManyChat\\Dynamic\\": "src/",
+            "ManyChat\\Laravel\\": "laravel/"
         }
-    }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ManyChat\\Laravel\\ManyChatServiceProvider"
+            ]
+        }
+    },
 }
