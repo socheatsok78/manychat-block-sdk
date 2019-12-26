@@ -87,8 +87,18 @@ or edit `composer.json`
 ### Additional Documents
 - [docs](docs/README.md)
 
+### Limitations
+Dynamic block has a limit to have not more than 10 messages in messages block, 11 quick replies and 5 actions.
+
+- Messages: 10
+- Actions: 5
+- Quick Replies: 11
+- Buttons: 3
+
 ## Messages
 Create a message block like Text, List or Card.
+
+> Note: A message can add up to 3 `Button` block, any thing more than that `ManyChat` will not show your response
 
 ### Text
 Create a `Text` message block for sending text messages.
