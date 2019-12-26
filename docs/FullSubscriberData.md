@@ -40,3 +40,27 @@ Example subscriber data response:
     }
 }
 ```
+
+### Subscriber
+Request ManyChat's subscriber data
+
+```php
+use ManyChat\Dynamic\Subscriber;
+
+$subscriber = new Subscriber('/* Subscriber Data (json) */');
+
+# or
+
+# If you're using Laravel, you can access `Subscriber` data from
+# `Illuminate\Http\Request` instance.
+
+use Illuminate\Http\Request;
+
+class WelcomeController extends Controller
+{
+    public function __construct(Request $request)
+    {
+        $subscriber = $request->user();
+    }
+}
+```
