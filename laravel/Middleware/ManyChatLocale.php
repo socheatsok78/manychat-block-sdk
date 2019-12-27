@@ -59,7 +59,7 @@ class ManyChatLocale extends ManyChatMiddleware
      */
     protected function shouldChangeLocale()
     {
-        if ($this->requestHasLocale()) {
+        if ($this->isManyChat() && $this->requestHasLocale()) {
             $locale = $this->getLocaleAttribute();
 
             App::setLocale($locale);
