@@ -1,5 +1,15 @@
+# Changelogs
+- [v1.0.6](#v106)
+- [v1.0.5](#v105)
+- [v1.0.4](#v104)
+- [v1.0.3](#v103)
+- [v1.0.2](#v102)
+- [v1.0.1](#v101)
+- [v1.0.0](#v100)
+
 <!-- v1.0.6 -->
-# v1.0.6 - Laravel Supplemental Update
+## v1.0.6
+Laravel Supplemental Update
 
 ### New
 - ManyChat middleware for Laravel
@@ -12,7 +22,7 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
 - 44c9894: Allow developer to inspect response from local development when  `app.debug` is set `true`
 
 <!-- v1.0.5 -->
-# v1.0.5
+## v1.0.5
 
 ### Fixes
 - 2db71f7: Fix `Foundation/Subscriber.php`, method `field` and `customField` check item in array using the wrong method `in_array` which should be `array_key_exists`
@@ -21,7 +31,7 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
 - 7ab61b4: Improve `Laravel/Middleware/ManyChatAgent`, using regular expression to detect ManyChat request
 
 <!-- v1.0.4 -->
-# v1.0.4
+## v1.0.4
 
 ### Fixes
 - 41000ce: Fix `ManyChatServiceProvider` not creating `Subscriber` instance
@@ -30,7 +40,8 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
 - `ManyChatAgent` middleware for Laravel
 
 <!-- v1.0.3 -->
-# v1.0.3 - Supplemental update
+## v1.0.3
+Supplemental update
 
 ### New
 - Add `Chat::UserAgent` static property to get ManyChat HTTP Request `User-Agent` value
@@ -39,7 +50,7 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
 - Improve `ManyChatServiceProvider`'s `Subscriber` discovery
 
 <!-- v1.0.2 -->
-# v1.0.2
+## v1.0.2
 
 ### Improvements
 - 95bc78b: Add Laravel service discovery
@@ -47,7 +58,7 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
   > Check [Full Subscriber Data](docs/FullSubscriberData.md) for more information
 
 <!-- v1.0.1 -->
-# v1.0.1
+## v1.0.1
 
 ### Fixes
 - 2e1b502: Fix Callback/ExternalCallback.php, remove $caption
@@ -57,7 +68,26 @@ See [ManyChat Block SDK \w Laravel](docs/Laravel.md) for mor information.
 - Update README.md, Improve documents
 
 <!-- v1.0.0 -->
-# v1.0.0 - Initial release
+## v1.0.0
+Initial release
+
 Send any message block, like text, gallery, list and others. Attach buttons with custom payloads to continue interaction.
 
 Trigger actions in ManyChat, like tagging a user, setting a Custom Field or notifying an admin.
+
+<!-- README -->
+# README
+Release template:
+
+```md
+# v1.x.x
+
+### Fixes
+-
+
+### New
+-
+
+### Improvements
+-
+```
