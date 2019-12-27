@@ -3,6 +3,7 @@
 namespace ManyChat\Laravel\Middleware;
 
 use Closure;
+use Exception;
 use Illuminate\Support\Facades\App;
 use ManyChat\Laravel\Middleware\ManyChatMiddleware;
 
@@ -17,11 +18,7 @@ class ManyChatLocale extends ManyChatMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->has('locale')) {
-            $locale = $this->getLocaleAttribute();
-
-            App::setLocale($locale);
-        }
+        $this->shouldChangeLocale();
 
         return $next($request);
     }
@@ -29,11 +26,44 @@ class ManyChatLocale extends ManyChatMiddleware
     /**
      * Get the locale attribute
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return string
      */
-    public function locale()
+    public function locale($request)
     {
-        return $this->request->input('locale');
+        return $request->input('locale');
+    }
+
+    /**
+     * Check if request has locale
+     *
+     * @return boolean
+     */
+    protected function requestHasLocale()
+    {
+        try {
+            if ($this->request->input('locale')) {
+                return true;
+            }
+
+            return false;
+        } catch (Exception $ex) {
+            return false;
+        }
+    }
+
+    /**
+     * Should change locale
+     *
+     * @return void
+     */
+    protected function shouldChangeLocale()
+    {
+        if ($this->requestHasLocale()) {
+            $locale = $this->getLocaleAttribute();
+
+            App::setLocale($locale);
+        }
     }
 
     /**
@@ -41,9 +71,9 @@ class ManyChatLocale extends ManyChatMiddleware
      *
      * @return string
      */
-    public function getLocaleAttribute()
+    protected function getLocaleAttribute()
     {
-        $locale = $this->locale();
+        $locale = $this->locale($this->request);
 
         $explodedLocale = explode("_", $locale);
 
