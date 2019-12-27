@@ -75,6 +75,8 @@ or edit `composer.json`
 }
 ```
 
+Check [latest release here][github-releases]. See [CHANGELOG.md](CHANGELOG.md) for release notes.
+
 # Contents
 - [Messages](#Messages)
 - [Attachments](#Attachments)
@@ -526,3 +528,4 @@ Logos, service marks and trade names are trademark of [ManyChat, Inc](https://ma
 This package is an **Unofficial SDK** licensed under the [MIT](LICENSE)
 
 [packagist]: https://packagist.org/packages/socheatsok78/manychat-block-sdk
+[github-releases]: https://github.com/socheatsok78/manychat-block-sdk/releases/latest
