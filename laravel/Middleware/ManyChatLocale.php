@@ -42,7 +42,7 @@ class ManyChatLocale extends ManyChatMiddleware
     protected function requestHasLocale()
     {
         try {
-            if ($this->request->input('locale')) {
+            if ($this->locale($this->request)) {
                 return true;
             }
 
