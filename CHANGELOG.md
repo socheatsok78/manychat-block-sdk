@@ -1,4 +1,5 @@
 # Changelogs
+- [v1.0.7](#107)
 - [v1.0.6](#v106)
 - [v1.0.5](#v105)
 - [v1.0.4](#v104)
@@ -6,6 +7,12 @@
 - [v1.0.2](#v102)
 - [v1.0.1](#v101)
 - [v1.0.0](#v100)
+
+<!-- v1.0.7 -->
+# v1.0.7
+
+### Fixes
+- 9fbd876: Update `ManyChatMiddleware@isManyChat` method to check `app.env` instead of `app.debug` config variable.
 
 <!-- v1.0.6 -->
 ## v1.0.6
