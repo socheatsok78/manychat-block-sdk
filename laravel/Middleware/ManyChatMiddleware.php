@@ -61,6 +61,11 @@ abstract class ManyChatMiddleware
      */
     protected function isManyChat()
     {
+        // Always return true if Laravel debug mode is on
+        if (config('app.debug')) {
+            return true;
+        }
+
         $request = $this->request;
 
         $requestAgent = $request->header('User-Agent');
