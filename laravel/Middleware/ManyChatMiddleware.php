@@ -61,8 +61,8 @@ abstract class ManyChatMiddleware
      */
     protected function isManyChat()
     {
-        // Always return true if Laravel debug mode is on
-        if (config('app.debug')) {
+        // Always return true if Laravel is not in production mode
+        if (config('app.env') != 'production') {
             return true;
         }
 
