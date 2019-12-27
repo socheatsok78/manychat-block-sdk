@@ -31,7 +31,7 @@ Example `DynamicBlock` request body:
 ```json
 {
     "first_name": "{{first_name|fallback:""|to_json:true}}",
-    "last_name": "{{last_name|fallback:""|to_json:true}",
+    "last_name": "{{last_name|fallback:""|to_json:true}}",
     "custom_key": "value",
     "my_subscriber": "{{subscriber_data|fallback:""|to_json:true}}"
 }
