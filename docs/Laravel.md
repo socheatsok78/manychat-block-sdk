@@ -54,13 +54,87 @@ protected $routeMiddleware = [
 ];
 ```
 
-You may also change the active language at runtime using the `ManyChatLocale` middleware.
+### Localize `Dynamic Block` response
+You may also change the active language at runtime using the `ManyChatLocale` middleware. This allow you to use Laravel built-in localization system to response `Dynamic Block` content with the language of choice from your `Subscriber`.
 
 > You need to add the `ManyChatLocale` middleware to the `$middleware` property of your `app/Http/Kernel.php` file:
+
 ```php
 use \ManyChat\Laravel\Middleware\ManyChatLocale;
 
 protected $middleware = [
     ManyChatLocale::class,
 ];
+```
+
+By default `ManyChatLocale` middleware check the `locale` key from your `Subscriber`. But if you want to use other property instead you can extend the default `ManyChatLocale` middleware and customize the `locale` method in your newly created `Middleware`. See example below:
+
+Create new middleware in your laravel project:
+
+```sh
+php artisan make:middleware ManyChatLocalize
+```
+
+Now open `ManyChatLocalize` in the folder `app/Http/Middleware`. See example below:
+
+```php
+namespace App\Http\Middleware;
+
+use Closure;
+
+class ManyChatLocalize
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        return $next($request);
+    }
+}
+```
+
+And extend `ManyChatLocalize` with `ManyChatLocale`, update the `handle` method and then override `locale` method see example below:
+
+```php
+namespace App\Http\Middleware;
+
+use Closure;
+use ManyChat\Laravel\Middleware\ManyChatLocale;
+
+class ManyChatLocalize extends ManyChatLocale
+{
+    /**
+     * Get the locale attribute
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return string
+     */
+    public function locale($request)
+    {
+        $customFields = $request->input('custom_fields');
+
+        $locale = array_key_exists('language', $customFields)
+            ? $customFields['language']
+            : config('app.locale');
+
+        return $locale;
+    }
+
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        return parent::handle($request, $next);
+    }
+}
 ```
