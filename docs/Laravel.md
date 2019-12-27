@@ -138,3 +138,17 @@ class ManyChatLocalize extends ManyChatLocale
     }
 }
 ```
+
+Replace `ManyChatLocale::class` with your newly created middleware `ManyChatLocalize::class`
+
+```diff
+- use \ManyChat\Laravel\Middleware\ManyChatLocale;
++ use App\Http\Middleware\ManyChatLocalize;
+
+protected $middleware = [
+-    ManyChatLocale::class,
++    ManyChatLocalize::class,
+];
+```
+
+Now Laravel should response the correct localize response base on each of your `Subscriber.
