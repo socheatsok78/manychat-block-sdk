@@ -16,4 +16,5 @@
 
 ## ManyChat Docs
 - [ManyChat Developer Tools](https://devtools.manychat.com/)
+- [ManyChat API](API/README.md)
 - [Response Reference](https://manychat.github.io/dynamic_block_docs/)
