@@ -35,7 +35,7 @@ trait HasAction
      */
     public function addTag($tag)
     {
-        $this->addAction([
+        return $this->addAction([
             'action' => 'add_tag',
             'tag_name' => $tag
         ]);
@@ -49,7 +49,7 @@ trait HasAction
      */
     public function removeTag($tag)
     {
-        $this->addAction([
+        return $this->addAction([
             'action' => 'remove_tag',
             'tag_name' => $tag
         ]);
@@ -64,7 +64,7 @@ trait HasAction
      */
     public function addField($key, $value)
     {
-        $this->addAction([
+        return $this->addAction([
             'action' => 'set_field_value',
             'field_name' => $key,
             'value' => $value
@@ -79,7 +79,7 @@ trait HasAction
      */
     public function removeField($key)
     {
-        $this->addAction([
+        return $this->addAction([
             'action' => 'unset_field_value',
             'field_name' => $key
         ]);
@@ -96,6 +96,8 @@ trait HasAction
         foreach ($tags as $tag) {
             $this->addTag($tag);
         }
+
+        return $this;
     }
 
     /**
@@ -109,6 +111,8 @@ trait HasAction
         foreach ($tags as $tag) {
             $this->removeTag($tag);
         }
+
+        return $this;
     }
 
     /**
@@ -122,6 +126,8 @@ trait HasAction
         foreach ($fields as $key => $value) {
             $this->addField($key, $value);
         }
+
+        return $this;
     }
 
     /**
@@ -135,5 +141,7 @@ trait HasAction
         foreach ($fields as $key => $value) {
             $this->removeField($key, $value);
         }
+
+        return $this;
     }
 }
