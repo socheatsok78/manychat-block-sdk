@@ -45,5 +45,7 @@ trait HasButton
         foreach ($buttons as $button) {
             $this->addButton($button);
         }
+
+        return $this;
     }
 }
