@@ -1,4 +1,5 @@
 # Changelogs
+- [v1.0.8](#108)
 - [v1.0.7](#107)
 - [v1.0.6](#v106)
 - [v1.0.5](#v105)
@@ -7,6 +8,13 @@
 - [v1.0.2](#v102)
 - [v1.0.1](#v101)
 - [v1.0.0](#v100)
+
+<!-- v1.0.8 -->
+# v1.0.8
+
+### Fixes
+- 94b9e50: Fix `Concerns/HasButton` method not returning the current instance
+- a12c1b9: Fix `Concerns/HasAction` method not returning the current instance
 
 <!-- v1.0.7 -->
 # v1.0.7
