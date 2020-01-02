@@ -18,7 +18,7 @@ trait HasAction
      * Add an action to action response
      *
      * @param array $action
-     * @return Chat
+     * @return self
      */
     protected function addAction($action)
     {
@@ -31,7 +31,7 @@ trait HasAction
      * Add a tag to subscriber
      *
      * @param string $tag
-     * @return void
+     * @return self
      */
     public function addTag($tag)
     {
@@ -45,7 +45,7 @@ trait HasAction
      * Remove a tag from subscriber
      *
      * @param string $tag
-     * @return void
+     * @return self
      */
     public function removeTag($tag)
     {
@@ -60,7 +60,7 @@ trait HasAction
      *
      * @param string $key
      * @param string $value
-     * @return void
+     * @return self
      */
     public function addField($key, $value)
     {
@@ -75,7 +75,7 @@ trait HasAction
      * Remove a custom field from subscriber
      *
      * @param string $key
-     * @return void
+     * @return self
      */
     public function removeField($key)
     {
@@ -89,7 +89,7 @@ trait HasAction
      * Add tags to subscriber
      *
      * @param array $tags
-     * @return void
+     * @return self
      */
     public function addTags($tags)
     {
@@ -104,7 +104,7 @@ trait HasAction
      * Remove tags from subscriber
      *
      * @param array $tags
-     * @return void
+     * @return self
      */
     public function removeTags($tags)
     {
@@ -119,7 +119,7 @@ trait HasAction
      * Add custom fields to subscriber
      *
      * @param array $fields
-     * @return void
+     * @return self
      */
     public function addFields($fields)
     {
@@ -134,7 +134,7 @@ trait HasAction
      * Remove custom fields from subscriber
      *
      * @param array $fields
-     * @return void
+     * @return self
      */
     public function removeFields($fields)
     {
